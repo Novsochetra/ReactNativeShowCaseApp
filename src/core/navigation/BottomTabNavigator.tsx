@@ -1,14 +1,16 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeStack } from './CustomStackContent';
+import { ComponentStack, HomeStack } from './CustomStackContent';
 import { IBottomTabParams } from './BottomTabNavigator.interface';
+import { CustomBottomTabBar } from './navigationConfig';
 
 const Tab = createBottomTabNavigator<IBottomTabParams>();
 
-export default function BottomTabNavigator(): React.ReactElement {
+export function BottomTabNavigator(): React.ReactElement {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="HomeStack" component={HomeStack} />
+    <Tab.Navigator tabBar={(props) => <CustomBottomTabBar {...props} />}>
+      <Tab.Screen name="HomeStack" component={HomeStack} options={{}} />
+      <Tab.Screen name="ComponentStack" component={ComponentStack} />
     </Tab.Navigator>
   );
 }
