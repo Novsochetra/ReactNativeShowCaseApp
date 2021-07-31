@@ -9,7 +9,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "android:clean": "cd android && ./gradlew clean && ./gradlew cleanBuildCache",
     "iosSE-dev": "ENVFILE=.env.development npx react-native run-ios --simulator='iPhone SE (2nd generation)'",
-    "android": "npx react-native run-android"
+    "android": "npx react-native run-android",
+    "apk": "cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.5",

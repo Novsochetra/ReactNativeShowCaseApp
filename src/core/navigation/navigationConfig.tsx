@@ -13,6 +13,7 @@ import {
   BottomTabBarOptions,
   BottomTabBarProps,
 } from '@react-navigation/bottom-tabs';
+import { ForFadeSlide } from './transition-config/ForFadeSlide';
 
 export const defaultNavigationStack: StackNavigationOptions = {
   headerTitleAlign: 'center',
@@ -24,6 +25,8 @@ export const defaultNavigationStack: StackNavigationOptions = {
   headerStyle: {
     backgroundColor: theme.primary,
   },
+
+  cardStyleInterpolator: ForFadeSlide,
 };
 
 const icons = [
