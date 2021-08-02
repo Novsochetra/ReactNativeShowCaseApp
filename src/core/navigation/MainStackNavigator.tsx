@@ -29,22 +29,45 @@ export const MainStackNavigator = (): React.ReactElement => {
         component={BottomTabNavigator}
         options={{ headerShown: false, headerTitleAlign: 'center' }}
       />
-      <Stack.Screen name="RowScreen" component={RowScreen} />
-      <Stack.Screen name="ColumnScreen" component={ColumnScreen} />
-      <Stack.Screen name="ContainerScreen" component={ContainerScreen} />
+      <Stack.Screen
+        name="RowScreen"
+        component={RowScreen}
+        options={{ title: 'Row' }}
+      />
+      <Stack.Screen
+        name="ColumnScreen"
+        component={ColumnScreen}
+        options={{ title: 'Column' }}
+      />
+      <Stack.Screen
+        name="ContainerScreen"
+        component={ContainerScreen}
+        options={{ title: 'Container' }}
+      />
       <Stack.Screen
         name="ErrorBoundaryScreen"
         component={ErrorBoundaryScreen}
+        options={{ title: 'Error Boundary' }}
       />
-      <Stack.Screen name="CustomSwitchScreen" component={CustomSwitchScreen} />
-      <Stack.Screen name="CollapsibleScreen" component={CollapsibleScreen} />
+      <Stack.Screen
+        name="CustomSwitchScreen"
+        component={CustomSwitchScreen}
+        options={{ title: 'Custom Switch' }}
+      />
+      <Stack.Screen
+        name="CollapsibleScreen"
+        component={CollapsibleScreen}
+        options={{ title: 'Collapsible' }}
+      />
       <Stack.Screen
         name="VersioningReactNativeScreen"
         component={VersioningReactNativeScreen}
+        options={{ title: 'Verisioning React Native' }}
       />
       <Stack.Screen
         name="ScrollableHeaderScreen"
         component={ScrollableHeaderScreen}
+        options={{ title: 'Scrollable Header' }}
       />
     </Stack.Navigator>
   );

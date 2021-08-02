@@ -47,7 +47,7 @@ export const Menus: () => Array<IListItemProps> = () => {
       ),
       paddingVertical: 16,
       mainAxisAlignment: 'space-between',
-      onPress: () => navigation.navigate('RowScreen'),
+      onPress: () => navigation.navigate('ErrorBoundaryScreen'),
     },
 
     {
