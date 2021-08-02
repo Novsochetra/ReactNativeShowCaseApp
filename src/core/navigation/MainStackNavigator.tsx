@@ -17,7 +17,12 @@ const Stack = createStackNavigator<IMainStackNavigatorParams>();
 export const MainStackNavigator = (): React.ReactElement => {
   return (
     <Stack.Navigator
-      screenOptions={{ ...defaultNavigationStack }}
+      screenOptions={({ navigation }) => {
+        return {
+          ...defaultNavigationStack,
+          detachPreviousScreen: !navigation.isFocused(),
+        };
+      }}
       initialRouteName="BottomTabNavigator">
       <Stack.Screen
         name="BottomTabNavigator"
