@@ -5,12 +5,10 @@ import { ListItem } from '@component/list-item/ListItem';
 import { theme } from '@core/asset/style/theme';
 import { Divider } from '@component/divider/Divider';
 import { Menus } from './data/Menu.data';
-import { StatusBar } from 'react-native';
 
 export const HomeScreen: React.FC<IHomeScreenProps> = () => {
   return (
     <>
-      <StatusBar backgroundColor={theme.primary} barStyle="light-content" />
       <ScrollView style={{ backgroundColor: theme.backgroundColor }}>
         {Menus().map((menu, idx) => {
           return (
