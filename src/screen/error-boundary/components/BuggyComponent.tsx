@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import { IBuggyComponentProps } from './BuggyComponent.interface';
 
 let timeout: NodeJS.Timeout;
 
 export const BuggyComponent: React.FC<IBuggyComponentProps> = () => {
+  const [showErrorComponent, setShowErrorComponent] = useState<boolean>(false);
+
   useEffect(() => {
     timeout = setTimeout(() => {
       // product props
-      console.log('ERROR', props);
+      setShowErrorComponent(true);
       clearTimeout(timeout);
     }, 3000);
 
@@ -20,6 +22,7 @@ export const BuggyComponent: React.FC<IBuggyComponentProps> = () => {
   return (
     <View>
       <Text>This is buggy component</Text>
+      {showErrorComponent && <Text>{props}</Text>}
     </View>
   );
 };
