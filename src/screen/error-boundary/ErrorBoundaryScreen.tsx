@@ -1,14 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { ErrorBoundary as ErrorBoundaryComponent } from '@component/error-boundary/ErorrBoundary';
+import { IErrorBoundaryScreenProps } from './ErrorBoundaryScreen.interface';
+import { BuggyComponent } from './components/BuggyComponent';
 
-export const ErrorBoundaryScreen = () => {
+export const ErrorBoundaryScreen: React.FC<IErrorBoundaryScreenProps> = () => {
   return (
-    <View style={styles.container}>
-      <Text>Error Boundary Screen</Text>
-    </View>
+    <ErrorBoundaryComponent onPressGoBack={() => {}}>
+      <View>
+        <Text>Error Boundary Screen</Text>
+
+        <BuggyComponent />
+      </View>
+    </ErrorBoundaryComponent>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {},
-});
