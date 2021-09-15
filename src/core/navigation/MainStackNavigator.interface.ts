@@ -10,4 +10,6 @@ export type IMainStackNavigatorParams = {
   CollapsibleScreen: undefined;
   VersioningReactNativeScreen: undefined;
   ScrollableHeaderScreen: undefined;
+  GoogleChromeTabScreen: undefined;
+  FadeIn: undefined;
 };

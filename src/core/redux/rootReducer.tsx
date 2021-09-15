@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers } from 'redux';
 
 export const config = (initState = { msg: 'hello' }): {} => {
@@ -13,7 +13,7 @@ const rootReducer = (state: any, action: any) => {
   if (action.type === 'LOGOUT') {
     state.data = undefined;
     state.authentication = undefined;
-    AsyncStorage.removeItem('persist:authentication');
+    // AsyncStorage.removeItem('persist:authentication');
   }
 
   return appReducers(state, action);

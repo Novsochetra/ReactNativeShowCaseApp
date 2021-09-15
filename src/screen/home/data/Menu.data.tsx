@@ -101,6 +101,32 @@ export const Menus: () => Array<IListItemProps> = () => {
       mainAxisAlignment: 'space-between',
       onPress: () => navigation.navigate('ScrollableHeaderScreen'),
     },
+
+    {
+      leftLabel: 'Google Chrome Tab',
+      leftIcon: () => (
+        <Image source={assets.icons.menu()} style={styles.icon} />
+      ),
+      rightIcon: () => (
+        <Image source={assets.icons.chevronRight()} style={styles.icon} />
+      ),
+      paddingVertical: 16,
+      mainAxisAlignment: 'space-between',
+      onPress: () => navigation.navigate('GoogleChromeTabScreen'),
+    },
+
+    {
+      leftLabel: 'FadeIn',
+      leftIcon: () => (
+        <Image source={assets.icons.menu()} style={styles.icon} />
+      ),
+      rightIcon: () => (
+        <Image source={assets.icons.chevronRight()} style={styles.icon} />
+      ),
+      paddingVertical: 16,
+      mainAxisAlignment: 'space-between',
+      onPress: () => navigation.navigate('FadeIn'),
+    },
   ];
 };
 

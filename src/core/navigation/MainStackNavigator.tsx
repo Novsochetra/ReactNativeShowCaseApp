@@ -11,6 +11,8 @@ import { VersioningReactNativeScreen } from '@screen/versioning-react-native/Ver
 import { ScrollableHeaderScreen } from '@screen/scrollable-header/ScrollableHeaderScreen';
 import { CustomSwitchScreen } from '@screen/custom-switch/CustomSwitchScreen';
 import { defaultNavigationStack } from './navigationConfig';
+import { GoogleChromeTabScreen } from '@screen/google-chrome-tab/GoogleChromeTabScreen';
+import { FadeInScreen } from '@screen/FadeIn';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -68,6 +70,16 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="ScrollableHeaderScreen"
         component={ScrollableHeaderScreen}
         options={{ title: 'Scrollable Header' }}
+      />
+      <Stack.Screen
+        name="GoogleChromeTabScreen"
+        component={GoogleChromeTabScreen}
+        options={{ title: 'Google Chrome Tab' }}
+      />
+      <Stack.Screen
+        name="FadeIn"
+        component={FadeInScreen}
+        options={{ title: 'Fade In' }}
       />
     </Stack.Navigator>
   );
