@@ -10,7 +10,9 @@
     "android:clean": "cd android && ./gradlew clean && ./gradlew cleanBuildCache",
     "iosSE-dev": "ENVFILE=.env.development npx react-native run-ios --simulator='iPhone SE (2nd generation)'",
     "android": "npx react-native run-android",
-    "apk": "cd android && ./gradlew assembleRelease"
+    "apk": "cd android && ./gradlew assembleRelease",
+    "gen-component": "hygen component new --name",
+    "gen-screen": "hygen screen new --name "
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.5",
@@ -43,10 +45,11 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.14.0",
+    "hygen": "^6.1.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "17.0.1",
-    "typescript": "^3.8.3"
+    "typescript": "^4.4.3"
   },
   "resolutions": {
     "@types/react": "^17"
