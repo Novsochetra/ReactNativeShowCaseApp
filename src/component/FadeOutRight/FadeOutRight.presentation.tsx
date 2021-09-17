@@ -49,12 +49,14 @@ export const FadeOutRightPresentation: React.FC<IFadeOutRightPresentationProps> 
     }, []);
 
     const callbackFinishOpacity = (isFinished: boolean): void => {
+      'worklet';
       if (isFinished) {
         opacity.value = Constant.MAX_OPACITY;
       }
     };
 
     const callbackFinishTranslateX = (isFinished: boolean): void => {
+      'worklet';
       if (isFinished) {
         translateX.value = Constant.INITIAL_POSITION_X;
       }
