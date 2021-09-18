@@ -1,0 +1,10 @@
+export const Constant = {
+  MIN_OPACITY: 0,
+  MAX_OPACITY: 1,
+
+  DEFAULT_DURATION_IN_MS: 500,
+  DEFAULT_DELAY_IN_MS: 0,
+
+  INITIAL_ROTATION_Y: Math.PI / 2,
+  FINAL_ROTATION_Y: 0,
+};
