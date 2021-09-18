@@ -15,7 +15,7 @@ export const BackInDown: React.FC<IBackInDownContainerProps> = ({
   durationInMS = Constant.DEFAULT_DURATION_IN_MS,
   initialPositionY = Constant.INITIAL_POSITION_Y,
 }) => {
-  const opacity = useSharedValue(Constant.MAX_OPACITY);
+  const opacity = useSharedValue(Constant.MIN_OPACITY);
   const translateY = useSharedValue(initialPositionY);
   const scale = useSharedValue(Constant.MIN_SCALE);
 
