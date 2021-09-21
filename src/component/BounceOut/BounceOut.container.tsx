@@ -28,7 +28,14 @@ export const BounceOut: React.FC<IBounceOutContainerProps> = ({
 
   const animatedStyle = useAnimatedStyle<Reanimated.AnimateStyle<ViewStyle>>(
     () => {
+      opacity.value = interpolate(
+        scale.value,
+        [0, 0.5],
+        [Constant.MIN_SCALE, Constant.MAX_SCALE],
+        Extrapolate.CLAMP,
+      );
       return {
+        opacity: opacity.value,
         transform: [{ scale: scale.value }],
       };
     },
@@ -36,7 +43,6 @@ export const BounceOut: React.FC<IBounceOutContainerProps> = ({
 
   useEffect(() => {
     onAnimateScale();
-    onAnimateOpacity();
   }, []);
 
   const onAnimateScale = () => {
@@ -54,14 +60,6 @@ export const BounceOut: React.FC<IBounceOutContainerProps> = ({
       ),
     );
   };
-
-  const onAnimateOpacity = () =>
-    (opacity.value = interpolate(
-      scale.value,
-      [0.8, Constant.MAX_OPACITY],
-      [Constant.MIN_SCALE, Constant.MAX_SCALE],
-      Extrapolate.CLAMP,
-    ));
 
   const onFinishAnimatedScale = (isFinished: boolean) => {
     'worklet';
