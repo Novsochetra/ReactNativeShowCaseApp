@@ -46,12 +46,14 @@ export const BounceOutDown: React.FC<IBounceOutDownContainerProps> = ({
     // the less value the more bouncing it will be
     const BOUNCING = 4;
 
-    const TRANSLATE_Y = 20;
-
     translateY.value = withDelay(
       delayInMS,
       withSequence(
-        withSpring(TRANSLATE_Y, { damping: BOUNCING, restSpeedThreshold: 100 }),
+        withSpring(Constant.INITIAL_TRANSLATE_Y, {
+          damping: BOUNCING,
+          restSpeedThreshold: 100,
+          velocity: 250,
+        }),
         withTiming(Constant.MAX_TRANSLATE_Y, {
           duration: Constant.DEFAULT_DURATION_IN_MS,
         }),
