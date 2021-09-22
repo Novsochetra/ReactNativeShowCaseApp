@@ -2,9 +2,11 @@
 import React, { useEffect } from 'react';
 import { ViewStyle } from 'react-native';
 import Reanimated, {
+  interpolate,
   useAnimatedStyle,
   useSharedValue,
   withDelay,
+  withSequence,
   withTiming,
 } from 'react-native-reanimated';
 import {
@@ -24,6 +26,18 @@ export const ZoomOutDown: React.FC<IZoomOutDownContainerProps> = ({
 
   const animatedStyle = useAnimatedStyle<Reanimated.AnimateStyle<ViewStyle>>(
     () => {
+      scale.value = interpolate(
+        translateY.value,
+        [Constant.FINAL_POSITION_Y, Constant.INITIAL_POSITION_Y, 30],
+        [Constant.MIN_SCALE, Constant.MAX_SCALE, 0.5],
+      );
+
+      opacity.value = interpolate(
+        translateY.value,
+        [Constant.FINAL_POSITION_Y, Constant.INITIAL_POSITION_Y, 30],
+        [Constant.MIN_OPACITY, Constant.MAX_OPACITY, Constant.MAX_OPACITY],
+      );
+
       return {
         opacity: opacity.value,
         transform: [{ scale: scale.value }, { translateY: translateY.value }],
@@ -32,25 +46,16 @@ export const ZoomOutDown: React.FC<IZoomOutDownContainerProps> = ({
   );
 
   useEffect(() => {
-    opacity.value = withDelay(
-      delayInMS,
-      withTiming(Constant.MIN_OPACITY, {
-        duration: durationInMS,
-      }),
-    );
-
-    scale.value = withDelay(
-      delayInMS,
-      withTiming(Constant.MIN_SCALE, {
-        duration: durationInMS,
-      }),
-    );
-
     translateY.value = withDelay(
       delayInMS,
-      withTiming(Constant.FINAL_POSITION_Y, {
-        duration: durationInMS,
-      }),
+      withSequence(
+        withTiming(30, {
+          duration: durationInMS,
+        }),
+        withTiming(Constant.FINAL_POSITION_Y, {
+          duration: durationInMS,
+        }),
+      ),
     );
   }, []);
 
