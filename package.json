@@ -12,7 +12,8 @@
     "android": "npx react-native run-android",
     "apk": "cd android && ./gradlew assembleRelease",
     "gen-component": "hygen component new --name",
-    "gen-screen": "hygen screen new --name "
+    "gen-screen": "hygen screen new --name ",
+    "push": "git push sub-origin main"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.5",
