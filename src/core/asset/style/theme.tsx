@@ -4,5 +4,6 @@ export const theme = {
   black400: 'hsla(0,0%,0%,0.4)',
   lightgray: 'lightgray',
   primary: '#7D55FF',
+  primaryLight: '#8a68f9',
   white: '#ffffff',
 };

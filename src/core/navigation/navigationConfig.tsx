@@ -24,6 +24,8 @@ export const defaultNavigationStack: StackNavigationOptions = {
   ),
   headerStyle: {
     backgroundColor: theme.primary,
+    shadowOpacity: 0,
+    elevation: 0,
   },
 
   cardStyleInterpolator: ForFadeSlide,
