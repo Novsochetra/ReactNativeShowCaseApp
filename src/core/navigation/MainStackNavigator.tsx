@@ -8,6 +8,7 @@ import { FlashScreen } from '@screen/Flash';
 import { PulseScreen } from '@screen/Pulse';
 import { RubberBandScreen } from '@screen/RubberBand';
 import { ShakeXScreen } from '@screen/ShakeX';
+import { ShakeYScreen } from '@screen/ShakeY';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -54,6 +55,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="ShakeXScreen"
         component={ShakeXScreen}
         options={{ title: 'Shake X' }}
+      />
+
+      <Stack.Screen
+        name="ShakeYScreen"
+        component={ShakeYScreen}
+        options={{ title: 'Shake Y' }}
       />
     </Stack.Navigator>
   );
