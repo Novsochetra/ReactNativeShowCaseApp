@@ -16,6 +16,7 @@ import { JelloScreen } from '@screen/Jello';
 import { HeartBeatScreen } from '@screen/HeartBeat';
 import { BackInDownScreen } from '@screen/BackInDown';
 import { BackInLeftScreen } from '@screen/BackInLeft';
+import { BackInRightScreen } from '@screen/BackInRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -110,6 +111,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="BackInLeftScreen"
         component={BackInLeftScreen}
         options={{ title: 'BackInLeft' }}
+      />
+
+      <Stack.Screen
+        name="BackInRightScreen"
+        component={BackInRightScreen}
+        options={{ title: 'BackInRight' }}
       />
     </Stack.Navigator>
   );
