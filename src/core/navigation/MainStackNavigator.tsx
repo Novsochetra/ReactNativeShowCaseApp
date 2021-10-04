@@ -17,6 +17,7 @@ import { HeartBeatScreen } from '@screen/HeartBeat';
 import { BackInDownScreen } from '@screen/BackInDown';
 import { BackInLeftScreen } from '@screen/BackInLeft';
 import { BackInRightScreen } from '@screen/BackInRight';
+import { BackInUpScreen } from '@screen/BackInUp';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -117,6 +118,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="BackInRightScreen"
         component={BackInRightScreen}
         options={{ title: 'BackInRight' }}
+      />
+
+      <Stack.Screen
+        name="BackInUpScreen"
+        component={BackInUpScreen}
+        options={{ title: 'BackInUp' }}
       />
     </Stack.Navigator>
   );
