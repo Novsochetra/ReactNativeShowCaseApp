@@ -5,6 +5,7 @@ import { defaultNavigationStack } from './navigationConfig';
 import { HomeScreen } from '@screen/Home/HomeScreen';
 import { BounceScreen } from '@screen/Bounce';
 import { FlashScreen } from '@screen/Flash';
+import { PulseScreen } from '@screen/Pulse';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -33,6 +34,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="FlashScreen"
         component={FlashScreen}
         options={{ title: 'Flash ⚡️' }}
+      />
+
+      <Stack.Screen
+        name="PulseScreen"
+        component={PulseScreen}
+        options={{ title: 'Pulse' }}
       />
     </Stack.Navigator>
   );
