@@ -14,6 +14,7 @@ import { TadaScreen } from '@screen/Tada';
 import { WobbleScreen } from '@screen/Wobble';
 import { JelloScreen } from '@screen/Jello';
 import { HeartBeatScreen } from '@screen/HeartBeat';
+import { BackInDownScreen } from '@screen/BackInDown';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -96,6 +97,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="HeartBeatScreen"
         component={HeartBeatScreen}
         options={{ title: 'Heart Beat' }}
+      />
+
+      <Stack.Screen
+        name="BackInDownScreen"
+        component={BackInDownScreen}
+        options={{ title: 'BackInDown' }}
       />
     </Stack.Navigator>
   );
