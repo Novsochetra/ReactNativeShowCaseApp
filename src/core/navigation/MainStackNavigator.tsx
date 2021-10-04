@@ -30,6 +30,7 @@ import { BounceInUpScreen } from '@screen/BounceInUp';
 import { BounceOutScreen } from '@screen/BounceOut';
 import { BounceOutDownScreen } from '@screen/BounceOutDown';
 import { BounceOutLeftScreen } from '@screen/BounceOutLeft';
+import { BounceOutRightScreen } from '@screen/BounceOutRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -208,6 +209,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="BounceOutLeftScreen"
         component={BounceOutLeftScreen}
         options={{ title: 'BounceOutLeft 🎾' }}
+      />
+
+      <Stack.Screen
+        name="BounceOutRightScreen"
+        component={BounceOutRightScreen}
+        options={{ title: 'BounceOutRight 🎾' }}
       />
     </Stack.Navigator>
   );
