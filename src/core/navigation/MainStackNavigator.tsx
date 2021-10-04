@@ -9,6 +9,7 @@ import { PulseScreen } from '@screen/Pulse';
 import { RubberBandScreen } from '@screen/RubberBand';
 import { ShakeXScreen } from '@screen/ShakeX';
 import { ShakeYScreen } from '@screen/ShakeY';
+import { SwingScreen } from '@screen/Swing';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -61,6 +62,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="ShakeYScreen"
         component={ShakeYScreen}
         options={{ title: 'Shake Y' }}
+      />
+
+      <Stack.Screen
+        name="SwingScreen"
+        component={SwingScreen}
+        options={{ title: 'Swing 🐤' }}
       />
     </Stack.Navigator>
   );
