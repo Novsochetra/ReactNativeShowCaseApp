@@ -19,6 +19,7 @@ import { BackInLeftScreen } from '@screen/BackInLeft';
 import { BackInRightScreen } from '@screen/BackInRight';
 import { BackInUpScreen } from '@screen/BackInUp';
 import { BackOutDownScreen } from '@screen/BackOutDown';
+import { BackOutLeftScreen } from '@screen/BackOutLeft';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -131,6 +132,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="BackOutDownScreen"
         component={BackOutDownScreen}
         options={{ title: 'BackOutDown' }}
+      />
+
+      <Stack.Screen
+        name="BackOutLeftScreen"
+        component={BackOutLeftScreen}
+        options={{ title: 'BackOutLeft' }}
       />
     </Stack.Navigator>
   );
