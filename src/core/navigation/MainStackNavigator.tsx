@@ -13,6 +13,7 @@ import { SwingScreen } from '@screen/Swing';
 import { TadaScreen } from '@screen/Tada';
 import { WobbleScreen } from '@screen/Wobble';
 import { JelloScreen } from '@screen/Jello';
+import { HeartBeatScreen } from '@screen/HeartBeat';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -89,6 +90,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="JelloScreen"
         component={JelloScreen}
         options={{ title: 'Jello' }}
+      />
+
+      <Stack.Screen
+        name="HeartBeatScreen"
+        component={HeartBeatScreen}
+        options={{ title: 'Heart Beat' }}
       />
     </Stack.Navigator>
   );
