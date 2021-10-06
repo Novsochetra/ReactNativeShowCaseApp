@@ -14,7 +14,8 @@
     "apk": "cd android && ./gradlew assembleRelease",
     "gen-component": "hygen component new --name",
     "gen-screen": "hygen screen new --name ",
-    "push": "git push sub-origin main"
+    "push": "git push sub-origin main",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.5",
@@ -51,22 +52,17 @@
     "husky": "^7.0.2",
     "hygen": "^6.1.0",
     "jest": "^26.6.3",
-    "lint-staged": "^11.2.0",
+    "lint-staged": ">=10",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "17.0.1",
     "typescript": "^4.4.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsc && lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   },
   "resolutions": {
     "@types/react": "^17"
