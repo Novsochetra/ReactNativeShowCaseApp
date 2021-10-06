@@ -72,6 +72,8 @@ import { RotateOutUpRightScreen } from '@screen/RotateOutUpRight';
 import { HingeScreen } from '@screen/Hinge';
 import { JackInTheBoxScreen } from '@screen/JackInTheBox';
 import { RollInScreen } from '@screen/RollIn';
+import { RollOutScreen } from '@screen/RollOut';
+import { ZoomInScreen } from '@screen/ZoomIn';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -502,6 +504,18 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="RollInScreen"
         component={RollInScreen}
         options={{ title: 'RollIn' }}
+      />
+
+      <Stack.Screen
+        name="RollOutScreen"
+        component={RollOutScreen}
+        options={{ title: 'RollOut' }}
+      />
+
+      <Stack.Screen
+        name="ZoomInScreen"
+        component={ZoomInScreen}
+        options={{ title: 'ZoomIn' }}
       />
     </Stack.Navigator>
   );
