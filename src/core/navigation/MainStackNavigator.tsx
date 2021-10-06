@@ -89,6 +89,7 @@ import { SlideInRightScreen } from '@screen/SlideInRight';
 import { SlideInUpScreen } from '@screen/SlideInUp';
 import { SlideOutDownScreen } from '@screen/SlideOutDown';
 import { SlideOutLeftScreen } from '@screen/SlideOutLeft';
+import { SlideOutRightScreen } from '@screen/SlideOutRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -621,6 +622,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="SlideOutLeftScreen"
         component={SlideOutLeftScreen}
         options={{ title: 'SlideOutLeft' }}
+      />
+
+      <Stack.Screen
+        name="SlideOutRightScreen"
+        component={SlideOutRightScreen}
+        options={{ title: 'SlideOutRight' }}
       />
     </Stack.Navigator>
   );
