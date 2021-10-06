@@ -70,6 +70,7 @@ import { RotateOutDownRightScreen } from '@screen/RotateOutDownRight';
 import { RotateOutUpLeftScreen } from '@screen/RotateOutUpLeft';
 import { RotateOutUpRightScreen } from '@screen/RotateOutUpRight';
 import { HingeScreen } from '@screen/Hinge';
+import { JackInTheBoxScreen } from '@screen/JackInTheBox';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -487,7 +488,13 @@ export const MainStackNavigator = (): React.ReactElement => {
       <Stack.Screen
         name="HingeScreen"
         component={HingeScreen}
-        options={{ title: 'Hinge ♻️' }}
+        options={{ title: 'Hinge' }}
+      />
+
+      <Stack.Screen
+        name="JackInTheBoxScreen"
+        component={JackInTheBoxScreen}
+        options={{ title: 'JackInTheBox' }}
       />
     </Stack.Navigator>
   );
