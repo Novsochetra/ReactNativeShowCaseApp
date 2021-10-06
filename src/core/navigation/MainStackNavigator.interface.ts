@@ -1,4 +1,5 @@
 export type IMainStackNavigatorParams = {
+  AppleNewsScreen: undefined;
   Home: undefined;
   BounceScreen: undefined;
   FlashScreen: undefined;

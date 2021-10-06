@@ -7,5 +7,6 @@ export const assets = {
     homeActive: () => require('./icon/home-active.png'),
     community: () => require('./icon/community.png'),
     communityActive: () => require('./icon/community-active.png'),
+    appleNewsLogo: () => require('./icon/apple-news-logo.png'),
   },
 };

@@ -17,6 +17,11 @@ const getMenuItem = (
   mainAxisAlignment: 'space-between',
 });
 
+const SHOW_CASE = {
+  title: 'Show Case',
+  data: [getMenuItem('Apple News', 'AppleNewsScreen')],
+};
+
 const ATTENTION_SEEKER = {
   title: 'Attention Seeker',
   data: [
@@ -205,6 +210,7 @@ export const MENUS: Array<{
   title: string;
   data: Array<any>;
 }> = [
+  SHOW_CASE,
   ATTENTION_SEEKER,
   BACK_ENTRANCE,
   BACK_EXIT,

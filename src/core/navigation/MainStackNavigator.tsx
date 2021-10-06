@@ -91,6 +91,7 @@ import { SlideOutDownScreen } from '@screen/SlideOutDown';
 import { SlideOutLeftScreen } from '@screen/SlideOutLeft';
 import { SlideOutRightScreen } from '@screen/SlideOutRight';
 import { SlideOutUpScreen } from '@screen/SlideOutUp';
+import { AppleNewsScreen } from '@screen/AppleNews';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -109,6 +110,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         component={HomeScreen}
         options={{ title: 'Home' }}
       />
+      <Stack.Screen
+        name="AppleNewsScreen"
+        component={AppleNewsScreen}
+        options={{ title: 'Apple News' }}
+      />
+
       <Stack.Screen
         name="BounceScreen"
         component={BounceScreen}
