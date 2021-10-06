@@ -184,7 +184,6 @@ const ZOOM_EXIT = {
 const SLIDE_ENTRANCE = {
   title: 'Slide Entrance',
   data: [
-    getMenuItem('SlideIn', 'SlideInScreen'),
     getMenuItem('SlideInDown', 'SlideInDownScreen'),
     getMenuItem('SlideInLeft', 'SlideInLeftScreen'),
     getMenuItem('SlideInRight', 'SlideInRightScreen'),
@@ -195,7 +194,6 @@ const SLIDE_ENTRANCE = {
 const SLIDE_EXIT = {
   title: 'Slide Exit',
   data: [
-    getMenuItem('SlideOut', 'SlideOutScreen'),
     getMenuItem('SlideOutDown', 'SlideOutDownScreen'),
     getMenuItem('SlideOutLeft', 'SlideOutLeftScreen'),
     getMenuItem('SlideOutRight', 'SlideOutRightScreen'),

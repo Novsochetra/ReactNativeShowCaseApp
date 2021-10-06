@@ -80,12 +80,10 @@ export type IMainStackNavigatorParams = {
   ZoomOutLeftScreen: undefined;
   ZoomOutRightScreen: undefined;
   ZoomOutUpScreen: undefined;
-  SlideInScreen: undefined;
   SlideInDownScreen: undefined;
   SlideInLeftScreen: undefined;
   SlideInRightScreen: undefined;
   SlideInUpScreen: undefined;
-  SlideOutScreen: undefined;
   SlideOutDownScreen: undefined;
   SlideOutLeftScreen: undefined;
   SlideOutRightScreen: undefined;
