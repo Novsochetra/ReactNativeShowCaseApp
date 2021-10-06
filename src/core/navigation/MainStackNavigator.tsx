@@ -83,6 +83,7 @@ import { ZoomOutDownScreen } from '@screen/ZoomOutDown';
 import { ZoomOutLeftScreen } from '@screen/ZoomOutLeft';
 import { ZoomOutRightScreen } from '@screen/ZoomOutRight';
 import { ZoomOutUpScreen } from '@screen/ZoomOutUp';
+import { SlideInDownScreen } from '@screen/SlideInDown';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -579,6 +580,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="ZoomOutUpScreen"
         component={ZoomOutUpScreen}
         options={{ title: 'ZoomOutUp' }}
+      />
+
+      <Stack.Screen
+        name="SlideInDownScreen"
+        component={SlideInDownScreen}
+        options={{ title: 'SlideInDown' }}
       />
     </Stack.Navigator>
   );
