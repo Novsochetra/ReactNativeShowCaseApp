@@ -19,7 +19,10 @@ const getMenuItem = (
 
 const SHOW_CASE = {
   title: 'Show Case',
-  data: [getMenuItem('Apple News', 'AppleNewsScreen')],
+  data: [
+    getMenuItem('Apple News', 'AppleNewsScreen'),
+    getMenuItem('Apple Stock', 'AppleStockScreen'),
+  ],
 };
 
 const ATTENTION_SEEKER = {
