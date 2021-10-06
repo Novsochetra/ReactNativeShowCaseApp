@@ -76,6 +76,7 @@ import { RollOutScreen } from '@screen/RollOut';
 import { ZoomInScreen } from '@screen/ZoomIn';
 import { ZoomInDownScreen } from '@screen/ZoomInDown';
 import { ZoomInLeftScreen } from '@screen/ZoomInLeft';
+import { ZoomInRightScreen } from '@screen/ZoomInRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -530,6 +531,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="ZoomInLeftScreen"
         component={ZoomInLeftScreen}
         options={{ title: 'ZoomInLeft' }}
+      />
+
+      <Stack.Screen
+        name="ZoomInRightScreen"
+        component={ZoomInRightScreen}
+        options={{ title: 'ZoomInRight' }}
       />
     </Stack.Navigator>
   );
