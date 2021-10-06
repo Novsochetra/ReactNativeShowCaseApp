@@ -40,6 +40,7 @@ import { FadeInRightScreen } from '@screen/FadeInRight';
 import { FadeInTopLeftScreen } from '@screen/FadeInTopLeft';
 import { FadeInTopRightScreen } from '@screen/FadeInTopRight';
 import { FadeInBottomLeftScreen } from '@screen/FadeInBottomLeft';
+import { FadeInBottomRightScreen } from '@screen/FadeInBottomRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -278,6 +279,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="FadeInBottomLeftScreen"
         component={FadeInBottomLeftScreen}
         options={{ title: 'FadeInBottomLeft' }}
+      />
+
+      <Stack.Screen
+        name="FadeInBottomRightScreen"
+        component={FadeInBottomRightScreen}
+        options={{ title: 'FadeInBottomRight' }}
       />
     </Stack.Navigator>
   );
