@@ -86,6 +86,7 @@ import { ZoomOutUpScreen } from '@screen/ZoomOutUp';
 import { SlideInDownScreen } from '@screen/SlideInDown';
 import { SlideInLeftScreen } from '@screen/SlideInLeft';
 import { SlideInRightScreen } from '@screen/SlideInRight';
+import { SlideInUpScreen } from '@screen/SlideInUp';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -600,6 +601,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="SlideInRightScreen"
         component={SlideInRightScreen}
         options={{ title: 'SlideInRight' }}
+      />
+
+      <Stack.Screen
+        name="SlideInUpScreen"
+        component={SlideInUpScreen}
+        options={{ title: 'SlideInUp' }}
       />
     </Stack.Navigator>
   );
