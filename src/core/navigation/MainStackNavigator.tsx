@@ -43,6 +43,8 @@ import { FadeInBottomLeftScreen } from '@screen/FadeInBottomLeft';
 import { FadeInBottomRightScreen } from '@screen/FadeInBottomRight';
 import { FadeOutScreen } from '@screen/FadeOut';
 import { FadeOutDownScreen } from '@screen/FadeOutDown';
+import { FadeOutLeftScreen } from '@screen/FadeOutLeft';
+import { FadeOutRightScreen } from '@screen/FadeOutRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -299,6 +301,18 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="FadeOutDownScreen"
         component={FadeOutDownScreen}
         options={{ title: 'FadeOutDown' }}
+      />
+
+      <Stack.Screen
+        name="FadeOutLeftScreen"
+        component={FadeOutLeftScreen}
+        options={{ title: 'FadeOutLeft' }}
+      />
+
+      <Stack.Screen
+        name="FadeOutRightScreen"
+        component={FadeOutRightScreen}
+        options={{ title: 'FadeOutRight' }}
       />
     </Stack.Navigator>
   );
