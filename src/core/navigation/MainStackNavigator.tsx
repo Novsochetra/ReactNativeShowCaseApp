@@ -55,6 +55,7 @@ import { FlipInXScreen } from '@screen/FlipInX';
 import { FlipInYScreen } from '@screen/FlipInY';
 import { FlipOutYScreen } from '@screen/FlipOutY';
 import { FlipOutXScreen } from '@screen/FlipOutX';
+import { LightSpeedInRightScreen } from '@screen/LightSpeedInRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -383,6 +384,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="FlipOutXScreen"
         component={FlipOutXScreen}
         options={{ title: 'FlipOutX' }}
+      />
+
+      <Stack.Screen
+        name="LightSpeedInRightScreen"
+        component={LightSpeedInRightScreen}
+        options={{ title: 'LightSpeedInRight 🌦' }}
       />
     </Stack.Navigator>
   );
