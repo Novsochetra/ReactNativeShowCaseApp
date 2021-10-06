@@ -121,7 +121,7 @@ export const MainStackNavigator = (): React.ReactElement => {
       <Stack.Screen
         name="AppleStockScreen"
         component={AppleStockScreen}
-        options={{ title: 'Apple News' }}
+        options={{ title: 'Apple Stock' }}
       />
 
       <Stack.Screen
