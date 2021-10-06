@@ -66,6 +66,7 @@ import { RotateInUpLeftScreen } from '@screen/RotateInUpLeft';
 import { RotateInUpRightScreen } from '@screen/RotateInUpRight';
 import { RotateOutScreen } from '@screen/RotateOut';
 import { RotateOutDownLeftScreen } from '@screen/RotateOutDownLeft';
+import { RotateOutDownRightScreen } from '@screen/RotateOutDownRight';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -460,6 +461,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="RotateOutDownLeftScreen"
         component={RotateOutDownLeftScreen}
         options={{ title: 'RotateOutDownLeft ♻️' }}
+      />
+
+      <Stack.Screen
+        name="RotateOutDownRightScreen"
+        component={RotateOutDownRightScreen}
+        options={{ title: 'RotateOutDownRight ♻️' }}
       />
     </Stack.Navigator>
   );
