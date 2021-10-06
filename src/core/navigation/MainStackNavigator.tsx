@@ -53,6 +53,7 @@ import { FadeOutBottomRightScreen } from '@screen/FadeOutBottomRight';
 import { FlipScreen } from '@screen/Flip';
 import { FlipInXScreen } from '@screen/FlipInX';
 import { FlipInYScreen } from '@screen/FlipInY';
+import { FlipOutYScreen } from '@screen/FlipOutY';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -369,6 +370,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="FlipInYScreen"
         component={FlipInYScreen}
         options={{ title: 'FlipInY' }}
+      />
+
+      <Stack.Screen
+        name="FlipOutYScreen"
+        component={FlipOutYScreen}
+        options={{ title: 'FlipOutY' }}
       />
     </Stack.Navigator>
   );
