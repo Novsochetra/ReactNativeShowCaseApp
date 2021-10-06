@@ -1,6 +1,11 @@
 import React from 'react';
-import { ISlideInDownScreenContainerProps, SlideInDownScreenPresentation } from '.';
+import {
+  ISlideInDownScreenContainerProps,
+  SlideInDownScreenPresentation,
+} from '.';
 
-export const SlideInDownScreen: React.FC<ISlideInDownScreenContainerProps> = (props) => {
+export const SlideInDownScreen: React.FC<ISlideInDownScreenContainerProps> = (
+  props,
+) => {
   return <SlideInDownScreenPresentation {...props} />;
 };

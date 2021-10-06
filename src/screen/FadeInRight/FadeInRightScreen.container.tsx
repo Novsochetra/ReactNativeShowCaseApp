@@ -1,6 +1,11 @@
 import React from 'react';
-import { IFadeInRightScreenContainerProps, FadeInRightScreenPresentation } from '.';
+import {
+  IFadeInRightScreenContainerProps,
+  FadeInRightScreenPresentation,
+} from '.';
 
-export const FadeInRightScreen: React.FC<IFadeInRightScreenContainerProps> = (props) => {
+export const FadeInRightScreen: React.FC<IFadeInRightScreenContainerProps> = (
+  props,
+) => {
   return <FadeInRightScreenPresentation {...props} />;
 };

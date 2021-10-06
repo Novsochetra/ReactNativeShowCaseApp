@@ -1,6 +1,11 @@
 import React from 'react';
-import { IBackOutRightScreenContainerProps, BackOutRightScreenPresentation } from '.';
+import {
+  IBackOutRightScreenContainerProps,
+  BackOutRightScreenPresentation,
+} from '.';
 
-export const BackOutRightScreen: React.FC<IBackOutRightScreenContainerProps> = (props) => {
+export const BackOutRightScreen: React.FC<IBackOutRightScreenContainerProps> = (
+  props,
+) => {
   return <BackOutRightScreenPresentation {...props} />;
 };

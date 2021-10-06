@@ -1,6 +1,10 @@
 import React from 'react';
-import { IBounceOutDownScreenContainerProps, BounceOutDownScreenPresentation } from '.';
+import {
+  IBounceOutDownScreenContainerProps,
+  BounceOutDownScreenPresentation,
+} from '.';
 
-export const BounceOutDownScreen: React.FC<IBounceOutDownScreenContainerProps> = (props) => {
-  return <BounceOutDownScreenPresentation {...props} />;
-};
+export const BounceOutDownScreen: React.FC<IBounceOutDownScreenContainerProps> =
+  (props) => {
+    return <BounceOutDownScreenPresentation {...props} />;
+  };

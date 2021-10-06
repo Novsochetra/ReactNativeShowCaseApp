@@ -1,6 +1,10 @@
 import React from 'react';
-import { IFadeOutBottomRightScreenContainerProps, FadeOutBottomRightScreenPresentation } from '.';
+import {
+  IFadeOutBottomRightScreenContainerProps,
+  FadeOutBottomRightScreenPresentation,
+} from '.';
 
-export const FadeOutBottomRightScreen: React.FC<IFadeOutBottomRightScreenContainerProps> = (props) => {
-  return <FadeOutBottomRightScreenPresentation {...props} />;
-};
+export const FadeOutBottomRightScreen: React.FC<IFadeOutBottomRightScreenContainerProps> =
+  (props) => {
+    return <FadeOutBottomRightScreenPresentation {...props} />;
+  };

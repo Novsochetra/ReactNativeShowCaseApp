@@ -1,6 +1,10 @@
 import React from 'react';
-import { IRotateOutUpLeftScreenContainerProps, RotateOutUpLeftScreenPresentation } from '.';
+import {
+  IRotateOutUpLeftScreenContainerProps,
+  RotateOutUpLeftScreenPresentation,
+} from '.';
 
-export const RotateOutUpLeftScreen: React.FC<IRotateOutUpLeftScreenContainerProps> = (props) => {
-  return <RotateOutUpLeftScreenPresentation {...props} />;
-};
+export const RotateOutUpLeftScreen: React.FC<IRotateOutUpLeftScreenContainerProps> =
+  (props) => {
+    return <RotateOutUpLeftScreenPresentation {...props} />;
+  };
