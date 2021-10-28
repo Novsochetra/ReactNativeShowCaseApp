@@ -1,5 +1,5 @@
 import React from 'react';
-import { JackInTheBox } from 'react-native-animated-css';
+import { JackInTheBox } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IJackInTheBoxScreenPresentationProps } from '.';

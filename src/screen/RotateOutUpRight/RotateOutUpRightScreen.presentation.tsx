@@ -1,5 +1,5 @@
 import React from 'react';
-import { RotateOutUpRight } from 'react-native-animated-css';
+import { RotateOutUpRight } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IRotateOutUpRightScreenPresentationProps } from '.';

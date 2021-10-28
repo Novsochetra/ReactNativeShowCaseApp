@@ -1,5 +1,5 @@
 import React from 'react';
-import { RubberBand } from 'react-native-animated-css';
+import { RubberBand } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IRubberBandScreenPresentationProps } from '.';

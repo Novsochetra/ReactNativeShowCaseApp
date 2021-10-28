@@ -1,12 +1,7 @@
 import { assets } from '@core/asset';
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
-import {
-  FadeInUp,
-  FadeOut,
-  SlideInUp,
-  ZoomIn,
-} from 'react-native-animated-css';
+import { FadeInUp, FadeOut, SlideInUp, ZoomIn } from '@core/lib/animated-css';
 import { IAppleStockScreenPresentationProps } from '.';
 import { AppleStockDescription } from './component/AppleStockDescription';
 import { AppleStockHeader } from './component/AppleStockHeader';

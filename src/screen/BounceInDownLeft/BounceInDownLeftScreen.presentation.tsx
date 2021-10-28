@@ -1,5 +1,5 @@
 import React from 'react';
-import { BounceInLeft } from 'react-native-animated-css';
+import { BounceInLeft } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IBounceInDownLeftScreenPresentationProps } from '.';

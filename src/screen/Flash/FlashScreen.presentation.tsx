@@ -1,7 +1,7 @@
 import React from 'react';
 import {} from 'react-native';
 import { Container } from '@component/container/Container';
-import { Flash } from 'react-native-animated-css';
+import { Flash } from '@core/lib/animated-css';
 import { Logo } from '@component/Logo';
 import { IFlashScreenPresentationProps } from '.';
 

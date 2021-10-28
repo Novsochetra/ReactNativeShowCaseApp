@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZoomIn } from 'react-native-animated-css';
+import { ZoomIn } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IZoomInScreenPresentationProps } from '.';

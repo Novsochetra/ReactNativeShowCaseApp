@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideOutLeft } from 'react-native-animated-css';
+import { SlideOutLeft } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { ISlideOutLeftScreenPresentationProps } from '.';

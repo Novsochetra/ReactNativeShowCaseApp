@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeartBeat } from 'react-native-animated-css';
+import { HeartBeat } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IHeartBeatScreenPresentationProps } from '.';

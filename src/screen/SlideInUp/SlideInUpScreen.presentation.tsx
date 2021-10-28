@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideInUp } from 'react-native-animated-css';
+import { SlideInUp } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { ISlideInUpScreenPresentationProps } from '.';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackInRight } from 'react-native-animated-css';
+import { BackInRight } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IBackInRightScreenPresentationProps } from '.';

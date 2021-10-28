@@ -1,5 +1,5 @@
 import React from 'react';
-import { FadeOutUp } from 'react-native-animated-css';
+import { FadeOutUp } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IFadeOutUpScreenPresentationProps } from '.';

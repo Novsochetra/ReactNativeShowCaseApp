@@ -1,5 +1,5 @@
 import React from 'react';
-import { Swing } from 'react-native-animated-css';
+import { Swing } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { ISwingScreenPresentationProps } from '.';

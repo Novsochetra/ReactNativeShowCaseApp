@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hinge } from 'react-native-animated-css';
+import { Hinge } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IHingeScreenPresentationProps } from '.';

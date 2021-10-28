@@ -1,6 +1,6 @@
 import { Container } from '@component/container/Container';
 import React from 'react';
-import { BounceOutLeft } from 'react-native-animated-css';
+import { BounceOutLeft } from '@core/lib/animated-css';
 import { Logo } from '@component/Logo';
 import { IBounceOutLeftScreenPresentationProps } from '.';
 

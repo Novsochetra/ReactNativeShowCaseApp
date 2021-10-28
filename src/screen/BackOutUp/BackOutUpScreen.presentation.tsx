@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackOutUp } from 'react-native-animated-css';
+import { BackOutUp } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IBackOutUpScreenPresentationProps } from '.';

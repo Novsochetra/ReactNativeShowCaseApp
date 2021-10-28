@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZoomInLeft } from 'react-native-animated-css';
+import { ZoomInLeft } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IZoomInLeftScreenPresentationProps } from '.';

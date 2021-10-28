@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideInDown } from 'react-native-animated-css';
+import { SlideInDown } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { ISlideInDownScreenPresentationProps } from '.';

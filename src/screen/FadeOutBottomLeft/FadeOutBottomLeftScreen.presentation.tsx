@@ -1,5 +1,5 @@
 import React from 'react';
-import { FadeOutBottomLeft } from 'react-native-animated-css';
+import { FadeOutBottomLeft } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IFadeOutBottomLeftScreenPresentationProps } from '.';

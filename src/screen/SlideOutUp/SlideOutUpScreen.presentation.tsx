@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideOutUp } from 'react-native-animated-css';
+import { SlideOutUp } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { ISlideOutUpScreenPresentationProps } from '.';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pulse } from 'react-native-animated-css';
+import { Pulse } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { IPulseScreenPresentationProps } from '.';
 import { Logo } from '@component/Logo';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideInLeft } from 'react-native-animated-css';
+import { SlideInLeft } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { ISlideInLeftScreenPresentationProps } from '.';

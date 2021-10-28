@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlipOutY } from 'react-native-animated-css';
+import { FlipOutY } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { IFlipOutYScreenPresentationProps } from '.';
 import { Logo } from '@component/Logo';

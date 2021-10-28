@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
-import { FadeInUp, SlideInUp, ZoomIn } from 'react-native-animated-css';
+import { FadeInUp, SlideInUp, ZoomIn } from '@core/lib/animated-css';
 import { IAppleNewsScreenPresentationProps } from '.';
 import { AppleNewsDescription } from './component/AppleNewsDescription';
 import { AppleNewsHeader } from './component/AppleNewsHeader';

@@ -1,7 +1,7 @@
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import React from 'react';
-import { Wobble } from 'react-native-animated-css';
+import { Wobble } from '@core/lib/animated-css';
 import { IWobbleScreenPresentationProps } from '.';
 
 export const WobbleScreenPresentation: React.FC<IWobbleScreenPresentationProps> =

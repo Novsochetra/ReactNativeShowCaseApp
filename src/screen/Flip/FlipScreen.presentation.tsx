@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flip } from 'react-native-animated-css';
+import { Flip } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IFlipScreenPresentationProps } from '.';

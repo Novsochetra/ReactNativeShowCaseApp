@@ -1,0 +1,13 @@
+export const Constant = {
+  MIN_OPACITY: 0,
+  MAX_OPACITY: 1,
+
+  MIN_SCALE: 0,
+  MAX_SCALE: 1,
+
+  INITIAL_POSITION_X: -300,
+  FINAL_POSITION_X: 0,
+
+  DEFAULT_DURATION_IN_MS: 500,
+  DEFAULT_DELAY_IN_MS: 0,
+};

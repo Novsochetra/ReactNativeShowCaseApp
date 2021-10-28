@@ -1,5 +1,5 @@
 import React from 'react';
-import { LightSpeedOutRight } from 'react-native-animated-css';
+import { LightSpeedOutRight } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { ILightSpeedOutRightScreenPresentationProps } from '.';

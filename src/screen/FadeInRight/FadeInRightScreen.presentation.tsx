@@ -1,5 +1,5 @@
 import React from 'react';
-import { FadeInRight } from 'react-native-animated-css';
+import { FadeInRight } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IFadeInRightScreenPresentationProps } from '.';

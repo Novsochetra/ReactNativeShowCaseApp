@@ -1,0 +1,9 @@
+export const Constant = {
+  DEFAULT_DURATION_IN_MS: 500,
+  DEFAULT_DELAY_IN_MS: 0,
+
+  MIN_SCALE: 1,
+  MAX_SCALE: 1.2,
+
+  INITIAL_VELOCITY: 10,
+};

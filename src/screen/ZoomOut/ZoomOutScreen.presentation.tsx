@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZoomOut } from 'react-native-animated-css';
+import { ZoomOut } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IZoomOutScreenPresentationProps } from '.';

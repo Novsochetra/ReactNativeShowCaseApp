@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShakeX } from 'react-native-animated-css';
+import { ShakeX } from '@core/lib/animated-css';
 import { Container } from '@component/container/Container';
 import { Logo } from '@component/Logo';
 import { IShakeXScreenPresentationProps } from '.';
