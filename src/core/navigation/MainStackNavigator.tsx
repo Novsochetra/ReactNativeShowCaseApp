@@ -93,6 +93,7 @@ import { SlideOutRightScreen } from '@screen/SlideOutRight';
 import { SlideOutUpScreen } from '@screen/SlideOutUp';
 import { AppleNewsScreen } from '@screen/AppleNews';
 import { AppleStockScreen } from '@screen/AppleStock';
+import { BiDirectionalListScreen } from '@screen/BiDirectionalList';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -122,6 +123,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="AppleStockScreen"
         component={AppleStockScreen}
         options={{ title: 'Apple Stock' }}
+      />
+
+      <Stack.Screen
+        name="BiDirectionalListScreen"
+        component={BiDirectionalListScreen}
+        options={{ title: 'Bi-Directional List' }}
       />
 
       <Stack.Screen

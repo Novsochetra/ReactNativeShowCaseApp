@@ -22,6 +22,7 @@ const SHOW_CASE = {
   data: [
     getMenuItem('Apple News', 'AppleNewsScreen'),
     getMenuItem('Apple Stock', 'AppleStockScreen'),
+    getMenuItem('Bi Directional List', 'BiDirectionalListScreen'),
   ],
 };
 
