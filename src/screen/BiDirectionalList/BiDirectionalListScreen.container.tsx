@@ -1,12 +1,9 @@
-import React, { useMemo, useEffect, useRef, useState } from 'react';
-import { Dimensions } from 'react-native';
+import React, { useMemo, useRef, useState } from 'react';
+import { Dimensions, ScrollView } from 'react-native';
 import {
   Extrapolate,
   interpolate,
-  runOnJS,
-  runOnUI,
   scrollTo,
-  useAnimatedReaction,
   useAnimatedRef,
   useAnimatedScrollHandler,
   useAnimatedStyle,
@@ -18,81 +15,72 @@ import {
   IBiDirectionalListScreenContainerProps,
   BiDirectionalListScreenPresentation,
 } from '.';
-import { TAB_DATA } from './component/Tabs';
+import { range } from '@core/utils/array/range';
+import { ITabSize, TAB_DATA } from './component/Tabs';
+import { sumPrevious } from '@core/utils/array/sumPrevious';
+import { sum } from '@core/utils/array/sum';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 export const BiDirectionalListScreen: React.FC<IBiDirectionalListScreenContainerProps> =
-  (props) => {
-    const tabRef = useAnimatedRef();
-    const sectionRef = useRef(null);
-    const [tabSizes, setTabSizes] = useState({});
+  () => {
+    const tabRef = useAnimatedRef<ScrollView>();
+    const sectionRef = useRef<any>();
     const scrollY = useSharedValue<number>(0);
     const activeTabIndex = useSharedValue<number>(0);
+    const [tabSizes, setTabSizes] = useState<Record<number, ITabSize>>({});
+    const tabSizeWidth = useMemo(
+      () => Object.values(tabSizes || {}).map((d) => d.width) || [],
+      [tabSizes],
+    );
+
+    // worklet function must be define on top, before we can use it
+    const getActiveTabWidth = () => {
+      'worklet';
+      return tabSizes[activeTabIndex.value]?.width ?? 0;
+    };
 
     const inputRange = useMemo(() => {
-      let result = [0];
-      let sumOfPreviousValue = 0;
+      const productItemLength =
+        TAB_DATA.map((d) => (d.data?.length + 1) * 100) || [];
 
-      for (let i = 1; i <= TAB_DATA.length; i++) {
-        sumOfPreviousValue += (TAB_DATA[i - 1].data?.length + 1) * 100;
-        result[i] = sumOfPreviousValue;
-      }
-
-      return result;
+      return sumPrevious(productItemLength);
     }, []);
 
     const outputRange = useMemo(() => {
-      // TODO: refactor
-      return Array.from({ length: inputRange.length + 1 }, (x, i) => i);
+      return range({ start: 0, size: inputRange.length });
     }, [inputRange]);
 
     const onScrollHandler = useAnimatedScrollHandler({
-      onScroll: (nativeEvent, value) => {
-        scrollY.value = nativeEvent?.contentOffset?.y;
+      onScroll: ({ contentOffset: { y } }) => {
+        scrollY.value = y;
 
-        const index = Math.floor(
-          interpolate(
-            nativeEvent?.contentOffset?.y,
-            inputRange,
-            outputRange,
-            Extrapolate.CLAMP,
-          ),
+        const currentIndex = Math.floor(
+          interpolate(y, inputRange, outputRange, Extrapolate.CLAMP),
         );
 
-        const eachSectionLength = TAB_DATA[index]?.data?.length + 1;
-
-        activeTabIndex.value = index > 0 ? index : 0;
+        activeTabIndex.value = currentIndex > 0 ? currentIndex : 0;
       },
     });
 
     const translateCenterX = useDerivedValue(() => {
-      let sumWidthPreviousTab = 0;
+      const sumPreviousTabWidth = sum(
+        tabSizeWidth.slice(0, activeTabIndex.value),
+      );
 
-      for (let i = 0; i < activeTabIndex.value; i++) {
-        sumWidthPreviousTab += tabSizes[i]?.width ?? 0;
-      }
-
-      const currentTabWidth = tabSizes[activeTabIndex.value]?.width ?? 0;
       const centerX =
-        sumWidthPreviousTab - (SCREEN_WIDTH - currentTabWidth) / 2;
+        sumPreviousTabWidth - (SCREEN_WIDTH - getActiveTabWidth()) / 2;
+
       scrollTo(tabRef, centerX, 0, true);
 
-      return sumWidthPreviousTab + 32;
+      return sumPreviousTabWidth + 32;
     });
 
     const indicatorStyle = useAnimatedStyle(() => {
-      const width = tabSizes[activeTabIndex.value]?.width ?? 0;
-      const translateX =
-        activeTabIndex.value > 0 ? (SCREEN_WIDTH - (width ?? 0)) / 2 : 0;
+      const width = getActiveTabWidth();
 
       return {
-        position: 'absolute',
-        bottom: 0,
-        height: 8,
-        borderRadius: 8,
         width: withTiming(width - 64, { duration: 250 }),
-        backgroundColor: 'rgb(197,47,100)',
         transform: [
           {
             translateX: withTiming(translateCenterX.value, {
@@ -103,7 +91,7 @@ export const BiDirectionalListScreen: React.FC<IBiDirectionalListScreenContainer
       };
     });
 
-    const onPressTabItem = (index: number) => {
+    const onPressTabItem = (index: number): void => {
       sectionRef.current?.scrollToLocation({
         itemIndex: 1,
         sectionIndex: index,
@@ -111,7 +99,7 @@ export const BiDirectionalListScreen: React.FC<IBiDirectionalListScreenContainer
       });
     };
 
-    const onSetTabSizes = (index, value) => {
+    const onSetTabSizes = (index: number, value: ITabSize): void => {
       setTabSizes((prevState) => {
         return {
           ...prevState,
@@ -123,7 +111,7 @@ export const BiDirectionalListScreen: React.FC<IBiDirectionalListScreenContainer
     return (
       <BiDirectionalListScreenPresentation
         {...{
-          ref: {
+          refs: {
             tabRef,
             sectionRef,
           },

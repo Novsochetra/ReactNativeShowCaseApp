@@ -1,63 +1,42 @@
-import { useTabSize } from '@screen/BiDirectionalList/hook/useTabSize';
-import React, { forwardRef, useContext } from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  TouchableNativeFeedback,
-  LayoutChangeEvent,
-} from 'react-native';
+import React, { forwardRef } from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import { TabItem } from '../TabItem';
+import Reanimated from 'react-native-reanimated';
 import { ITabsPresentationProps } from './';
 
-export const TabsPresentation: React.FC<ITabsPresentationProps> = forwardRef(
+export const TabsPresentation = forwardRef<ScrollView, ITabsPresentationProps>(
   (props, ref) => {
-    const [_, setTabSizes] = useTabSize();
+    console.log('DATA: ', props.data);
+
     return (
       <ScrollView ref={ref} showsHorizontalScrollIndicator={false} horizontal>
-        {props.data.map((title, index) => {
+        {props.data?.map((title: any, index: number) => {
           return (
             <TabItem
-              label={title}
-              onLayout={({ nativeEvent: { layout } }) =>
-                setTabSizes(index, {
+              key={`tabitem-${index}`}
+              onPress={() => props.onPressTabItem(index)}
+              onLayout={({ nativeEvent: { layout } }) => {
+                props.onSetTabSizes(index, {
                   width: layout.width,
                   height: layout.height,
-                })
-              }
+                });
+              }}
+              title={title}
             />
           );
         })}
+        <Reanimated.View style={[styles.scrollbar, props.indicatorStyle]} />
       </ScrollView>
     );
   },
 );
 
-const TabItem = ({
-  label,
-  onLayout,
-}: {
-  label: string;
-  onLayout: ((event: LayoutChangeEvent) => void) | undefined;
-}) => {
-  return (
-    <View style={styles.tabItemContainer} onLayout={onLayout}>
-      <Text>{label}</Text>
-    </View>
-  );
-};
-
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'purple',
-  },
-
-  tabItemContainer: {
-    backgroundColor: 'yellow',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    minWidth: 200,
-    justifyContent: 'center',
-    alignItems: 'center',
+  scrollbar: {
+    position: 'absolute',
+    bottom: 0,
+    height: 8,
+    borderRadius: 8,
+    backgroundColor: 'rgb(197,47,100)',
   },
 });
