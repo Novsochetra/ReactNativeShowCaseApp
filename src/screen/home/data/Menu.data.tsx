@@ -23,6 +23,7 @@ const SHOW_CASE = {
     getMenuItem('Apple News', 'AppleNewsScreen'),
     getMenuItem('Apple Stock', 'AppleStockScreen'),
     getMenuItem('Bi Directional List', 'BiDirectionalListScreen'),
+    getMenuItem('Parallax Scroll', 'ParallaxScrollScreen'),
   ],
 };
 

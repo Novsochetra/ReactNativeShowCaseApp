@@ -94,6 +94,7 @@ import { SlideOutUpScreen } from '@screen/SlideOutUp';
 import { AppleNewsScreen } from '@screen/AppleNews';
 import { AppleStockScreen } from '@screen/AppleStock';
 import { BiDirectionalListScreen } from '@screen/BiDirectionalList';
+import { ParallaxScrollScreen } from '@screen/ParallaxScroll';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -129,6 +130,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="BiDirectionalListScreen"
         component={BiDirectionalListScreen}
         options={{ title: 'Bi-Directional List' }}
+      />
+
+      <Stack.Screen
+        name="ParallaxScrollScreen"
+        component={ParallaxScrollScreen}
+        options={{ title: 'Parralax Scroll Header' }}
       />
 
       <Stack.Screen
