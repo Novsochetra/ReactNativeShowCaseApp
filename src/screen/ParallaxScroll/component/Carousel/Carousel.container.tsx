@@ -1,9 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
-import { Dimensions, NativeScrollEvent, ScrollView } from 'react-native';
+import React, { useState, useRef } from 'react';
 import {
+  Dimensions,
+  NativeScrollEvent,
+  ScrollView,
+  ScrollViewBase,
+} from 'react-native';
+import Reanimated, {
   runOnJS,
-  runOnUI,
   useAnimatedRef,
   useAnimatedScrollHandler,
   useAnimatedStyle,
@@ -13,14 +16,18 @@ import {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
-import { ICarouselContainerProps, CarouselPresentation } from '.';
+import {
+  ICarouselContainerProps,
+  CarouselPresentation,
+  ReanimatedScrollView,
+} from '.';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 export const Carousel: React.FC<ICarouselContainerProps> = (props) => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const scrollRef = useAnimatedRef<ScrollView>();
-  const scrollActiveCountRef = useAnimatedRef<ScrollView>();
+  const scrollRef = useAnimatedRef<ReanimatedScrollView>();
+  const scrollActiveCountRef = useRef<ScrollView>(null);
   const offsetX = useSharedValue(0);
   const velocityX = useSharedValue(0);
   const activeIndex = useSharedValue(0);
@@ -43,13 +50,6 @@ export const Carousel: React.FC<ICarouselContainerProps> = (props) => {
           translateX: dotTranslateX.value,
         },
       ],
-    };
-  });
-
-  const activeIndexCountStyle = useAnimatedStyle(() => {
-    return {
-      color: 'white',
-      height: 20,
     };
   });
 
@@ -84,7 +84,7 @@ export const Carousel: React.FC<ICarouselContainerProps> = (props) => {
     onMomentumEnd: ({ contentOffset: { x } }: NativeScrollEvent) => {
       const index = Math.round(x / SCREEN_WIDTH);
 
-      if (activeIndex.value != index) {
+      if (activeIndex.value !== index) {
         activeIndex.value = index;
         const isScrollBack = velocityX.value < 0;
         const delayDuration = isScrollBack ? 0 : 250;
@@ -145,11 +145,9 @@ export const Carousel: React.FC<ICarouselContainerProps> = (props) => {
   return (
     <CarouselPresentation
       {...props}
-      ref={{ scrollRef, scrollActiveCountRef }}
-      offsetY={props.offsetY}
+      refs={{ scrollRef, scrollActiveCountRef }}
+      images={props.images}
       dotStyle={dotStyle}
-      activeSlide={activeSlide}
-      activeIndexCountStyle={activeIndexCountStyle}
       onChangeSlide={onChangeSlide}
       onScrollHandler={onScrollHandler}
       controllButtonStyle={props.animatedControllStyle}

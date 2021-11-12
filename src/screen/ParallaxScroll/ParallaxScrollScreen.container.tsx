@@ -1,25 +1,12 @@
-import React, { useEffect } from 'react';
-import {
-  NativeScrollEvent,
-  NativeSyntheticEvent,
-  ScrollView,
-  StyleProp,
-  StyleSheet,
-  ViewStyle,
-} from 'react-native';
-import { TapGestureHandler } from 'react-native-gesture-handler';
+import React from 'react';
+import { NativeScrollEvent, ViewStyle } from 'react-native';
 import Reanimated, {
   Extrapolate,
   interpolate,
-  scrollTo,
   useAnimatedRef,
   useAnimatedScrollHandler,
   useAnimatedStyle,
   useSharedValue,
-  withTiming,
-  diff,
-  diffClamp,
-  useDerivedValue,
 } from 'react-native-reanimated';
 import {
   IParallaxScrollScreenContainerProps,
@@ -28,7 +15,7 @@ import {
 
 export const ParallaxScrollScreen: React.FC<IParallaxScrollScreenContainerProps> =
   (props) => {
-    const scrollRef = useAnimatedRef<ScrollView>();
+    const scrollRef = useAnimatedRef<Reanimated.ScrollView>();
     const height = useSharedValue<number>(300);
     const opacity = useSharedValue<number>(1);
     const offsetY = useSharedValue<number>(0);
@@ -80,19 +67,13 @@ export const ParallaxScrollScreen: React.FC<IParallaxScrollScreenContainerProps>
       },
     );
 
-    const onScrollEndDrag = () => {
-      console.log('OFFSET: ', offsetY.value);
-    };
-
     return (
       <ParallaxScrollScreenPresentation
         ref={scrollRef}
         {...props}
-        offsetY={offsetY.value}
         animatedHeaderStyle={animatedHeaderStyle}
         animatedScrollViewStyle={animatedScrollViewStyle}
         onScrollHandler={onScrollHandler}
-        onScrollEndDrag={onScrollEndDrag}
         animatedControllStyle={animatedControllStyle}
       />
     );
