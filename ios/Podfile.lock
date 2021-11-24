@@ -1,27 +1,6 @@
 PODS:
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
-  - EXApplication (4.0.0):
-    - ExpoModulesCore
-  - EXConstants (12.1.3):
-    - ExpoModulesCore
-  - EXErrorRecovery (3.0.3):
-    - ExpoModulesCore
-  - EXFileSystem (13.0.3):
-    - ExpoModulesCore
-  - EXFont (10.0.3):
-    - ExpoModulesCore
-  - EXGL (11.0.3):
-    - EXGL_CPP
-    - ExpoModulesCore
-  - EXGL_CPP (11.0.1):
-    - React-jsi
-  - EXKeepAwake (10.0.0):
-    - ExpoModulesCore
-  - Expo (43.0.2):
-    - ExpoModulesCore
-  - ExpoModulesCore (0.4.7):
-    - React-Core
   - FBLazyVector (0.64.1)
   - FBReactNativeSpec (0.64.1):
     - RCT-Folly (= 2020.01.13.00)
@@ -351,16 +330,6 @@ PODS:
 
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
-  - EXApplication (from `../node_modules/expo-application/ios`)
-  - EXConstants (from `../node_modules/expo-constants/ios`)
-  - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
-  - EXFileSystem (from `../node_modules/expo-file-system/ios`)
-  - EXFont (from `../node_modules/expo-font/ios`)
-  - EXGL (from `../node_modules/expo-gl/ios`)
-  - EXGL_CPP (from `../node_modules/expo-gl-cpp/cpp`)
-  - EXKeepAwake (from `../node_modules/expo-keep-awake/ios`)
-  - Expo (from `../node_modules/expo/ios`)
-  - ExpoModulesCore (from `../node_modules/expo-modules-core/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
@@ -410,26 +379,6 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
-  EXApplication:
-    :path: "../node_modules/expo-application/ios"
-  EXConstants:
-    :path: "../node_modules/expo-constants/ios"
-  EXErrorRecovery:
-    :path: "../node_modules/expo-error-recovery/ios"
-  EXFileSystem:
-    :path: "../node_modules/expo-file-system/ios"
-  EXFont:
-    :path: "../node_modules/expo-font/ios"
-  EXGL:
-    :path: "../node_modules/expo-gl/ios"
-  EXGL_CPP:
-    :path: "../node_modules/expo-gl-cpp/cpp"
-  EXKeepAwake:
-    :path: "../node_modules/expo-keep-awake/ios"
-  Expo:
-    :path: "../node_modules/expo/ios"
-  ExpoModulesCore:
-    :path: "../node_modules/expo-modules-core/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   FBReactNativeSpec:
@@ -502,16 +451,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
-  EXApplication: 0e15240e4d125b62f1cae48759ffbbd32b9286a6
-  EXConstants: 6d585d93723b18d7a8c283591a335609e3bc153e
-  EXErrorRecovery: ac2622400a32be84604591f70d0efff416e4b9a2
-  EXFileSystem: 99aac7962c11c680681819dd9cbca24e20e5b1e7
-  EXFont: 2e1c6fe726d008a039db80df95f48b4921b7fe59
-  EXGL: e3def34c0735591c89f62e6649b157d0985c3a8b
-  EXGL_CPP: 23709fa188f51702294bf93e19a4fe6dec4f0472
-  EXKeepAwake: 8aa32396a5972d26e75e538603aad0f032396503
-  Expo: b66c9661cf2514b4adf67b8367178e8ed3eb9801
-  ExpoModulesCore: c353a3bed60c3b83dbe63f134aaa7bf4733ffa16
   FBLazyVector: 7b423f9e248eae65987838148c36eec1dbfe0b53
   FBReactNativeSpec: 4cdee9d2f91d0a33a95c511322d93e867a089db1
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
@@ -549,6 +488,6 @@ SPEC CHECKSUMS:
   RNScreens: 21b73c94c9117e1110a79ee0ee80c93ccefed8ce
   Yoga: a7de31c64fe738607e7a3803e3f591a4b1df7393
 
-PODFILE CHECKSUM: 126a1f45a689655c6db969e711337f6d8a30d20a
+PODFILE CHECKSUM: 34a5ab8dd15bc50f31be19946963c778f73eb22f
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
