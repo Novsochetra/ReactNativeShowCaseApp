@@ -27,6 +27,7 @@ export const ProductListPresentation = forwardRef<
       renderItem={({ item }: { item: IProduct; index: number }) => (
         <ProductItem {...item} />
       )}
+      stickySectionHeadersEnabled={false}
       SectionSeparatorComponent={Seperator}
       ItemSeparatorComponent={Seperator}
       renderSectionHeader={({ section: { title } }) => <Header title={title} />}
