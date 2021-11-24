@@ -3,7 +3,6 @@ export type IMainStackNavigatorParams = {
   AppleStockScreen: undefined;
   BiDirectionalListScreen: undefined;
   ParallaxScrollScreen: undefined;
-  ThreeJSScreen: undefined;
   Home: undefined;
   BounceScreen: undefined;
   FlashScreen: undefined;

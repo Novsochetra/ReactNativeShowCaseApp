@@ -73,12 +73,12 @@ export const Carousel: React.FC<ICarouselContainerProps> = (props) => {
 
     onScroll: ({ contentOffset: { x }, velocity }: NativeScrollEvent) => {
       offsetX.value = x;
-      velocityX.value = velocity?.x || 0;
+      velocityX.value = velocity?.x;
     },
 
-    onEndDrag: ({ contentOffset: { x } }: NativeScrollEvent) => {
+    onEndDrag: ({ contentOffset: { x }, velocity }: NativeScrollEvent) => {
       offsetX.value = x;
-      console.log('END DRAG');
+      velocityX.value = velocity?.x;
     },
 
     onMomentumEnd: ({ contentOffset: { x } }: NativeScrollEvent) => {
@@ -86,6 +86,7 @@ export const Carousel: React.FC<ICarouselContainerProps> = (props) => {
 
       if (activeIndex.value !== index) {
         activeIndex.value = index;
+        console.log('VELOCITY: ', velocityX.value);
         const isScrollBack = velocityX.value < 0;
         const delayDuration = isScrollBack ? 0 : 250;
 

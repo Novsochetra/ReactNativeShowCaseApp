@@ -23,6 +23,7 @@ export const CarouselPresentation: React.FC<ICarouselPresentationProps> = ({
             ref={refs.scrollActiveCountRef}
             pagingEnabled
             scrollEnabled={false}
+            scrollEventThrottle={8}
             showsVerticalScrollIndicator={false}
             style={styles.activeSlideIndexWrapper}>
             {Array.from({ length: images.length }).map((_, index) => (
@@ -45,6 +46,7 @@ export const CarouselPresentation: React.FC<ICarouselPresentationProps> = ({
         style={[style]}
         horizontal
         pagingEnabled
+        scrollEventThrottle={8}
         directionalLockEnabled
         onScrollAnimationEnd={() => {
           console.log('END');

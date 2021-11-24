@@ -26,6 +26,7 @@ export const ParallaxScrollScreenPresentation = forwardRef<
         <Reanimated.ScrollView
           ref={ref}
           onScroll={onScrollHandler}
+          scrollEventThrottle={8}
           showsVerticalScrollIndicator={false}
           style={[animatedScrollViewStyle]}>
           <Carousel
