@@ -24,6 +24,7 @@ const SHOW_CASE = {
     getMenuItem('Apple Stock', 'AppleStockScreen'),
     getMenuItem('Bi Directional List', 'BiDirectionalListScreen'),
     getMenuItem('Parallax Scroll', 'ParallaxScrollScreen'),
+    getMenuItem('Image Network', 'ImageNetWorkScreen'),
   ],
 };
 
