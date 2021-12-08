@@ -6,12 +6,15 @@ import {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import { IImageNetworkContainerProps, ImageNetworkPresentation } from '.';
+import {
+  IImageNetworkContainerProps,
+  ImageNetworkPresentation,
+  Constant,
+} from '.';
+import { IImageStatus } from './ImageNetwork.interfaces';
 
 export const ImageNetwork: React.FC<IImageNetworkContainerProps> = (props) => {
-  const [isFetchingImage, setIsFetchingImage] = useState(true);
-  const [isLoadedImageSuccess, setIsLoadImageSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [status, setStatus] = useState<IImageStatus>(IImageStatus.LOADING);
   const opacity = useSharedValue(1);
 
   const animatedImageStyle = useAnimatedStyle((): ImageStyle => {
@@ -21,32 +24,25 @@ export const ImageNetwork: React.FC<IImageNetworkContainerProps> = (props) => {
   });
 
   const onLoadImageError = () => {
-    setIsError(true);
-    setIsLoadImageSuccess(false);
-    if (isFetchingImage) {
-      setIsFetchingImage(false);
-    }
+    setStatus(IImageStatus.FAILED);
   };
 
   const onLoadImageComplete = () => {
-    if (isError) {
-      setIsError(false);
-    }
-
-    opacity.value = withTiming(0, { duration: 500 }, (isFinished) => {
-      if (isFinished) {
-        runOnJS(setIsLoadImageSuccess)(true);
-        runOnJS(setIsFetchingImage)(false);
-      }
-    });
+    opacity.value = withTiming(
+      0,
+      { duration: Constant.FADE_OUT_DURATION },
+      (isFinished) => {
+        if (isFinished) {
+          runOnJS(setStatus)(IImageStatus.COMPLETED);
+        }
+      },
+    );
   };
 
   return (
     <ImageNetworkPresentation
       {...props}
-      isError={isError}
-      isFetchingImage={isFetchingImage}
-      isLoadedImageSuccess={isLoadedImageSuccess}
+      status={status}
       animatedImageStyle={animatedImageStyle}
       onLoadImageError={onLoadImageError}
       onLoadImageComplete={onLoadImageComplete}

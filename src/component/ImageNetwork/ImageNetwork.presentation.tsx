@@ -1,14 +1,15 @@
 import React from 'react';
 import Reanimated from 'react-native-reanimated';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
-import { IImageNetworkPresentationProps, Constant } from './';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { IImageNetworkPresentationProps } from './';
+import { IImageStatus } from './ImageNetwork.interfaces';
 
 export const ImageNetworkPresentation: React.FC<IImageNetworkPresentationProps> =
   (props) => {
     const { LoadingComponent, FallbackComponent } = props;
     return (
       <Reanimated.View style={[props.containerStyle]}>
-        {props.isError ? (
+        {props.status === IImageStatus.FAILED ? (
           <View style={[styles.fallbackComponent]}>{FallbackComponent}</View>
         ) : (
           <Reanimated.Image
@@ -21,7 +22,7 @@ export const ImageNetworkPresentation: React.FC<IImageNetworkPresentationProps> 
         )}
 
         {/* we remove the view after image is loaded to save the momory */}
-        {props.isFetchingImage ? (
+        {props.status === IImageStatus.LOADING ? (
           <Reanimated.View
             style={[styles.overlayImage, props.animatedImageStyle]}>
             {LoadingComponent ? (

@@ -12,10 +12,14 @@ export interface IImageNetworkContainerProps
 
 export interface IImageNetworkPresentationProps
   extends IImageNetworkContainerProps {
-  isError: boolean;
-  isFetchingImage: boolean;
-  isLoadedImageSuccess: boolean;
+  status: IImageStatus;
   animatedImageStyle: Reanimated.AnimatedStyleProp<ImageStyle>;
   onLoadImageError: () => void;
   onLoadImageComplete: () => void;
+}
+
+export enum IImageStatus {
+  LOADING = 0,
+  COMPLETED = 1,
+  FAILED = 2,
 }
