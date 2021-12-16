@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { v4 as uuidv4 } from 'uuid';
 import Reanimated from 'react-native-reanimated';
 import { IControllButtonPresentationProps } from './';
 
@@ -10,6 +11,7 @@ export const ControllButtonPresentation: React.FC<IControllButtonPresentationPro
         {Array.from({ length: size }).map((_, index) => {
           return (
             <ControllButtonItem
+              key={uuidv4()}
               value="1"
               onPress={() => onChangeSlide(index)}
             />
