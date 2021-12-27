@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { IBlossomScreenPresentationProps } from '.';
 import { Ingredient } from './component/Ingredient';
+import { PlanIntro } from './component/PlanIntro';
 //import { InstructionCard } from './component/InstructionCard';
 
 export const BlossomScreenPresentation: React.FC<IBlossomScreenPresentationProps> =
@@ -36,6 +37,13 @@ export const BlossomScreenPresentation: React.FC<IBlossomScreenPresentationProps
           label="Water"
           icon={require('@core/asset/icon/leaf.png')}
           status="Completed"
+        />
+
+        <PlanIntro
+          title="Zebra cactus"
+          subTitle="Water every 2 weeks"
+          icon="https://picsum.photos/2000/3000"
+          description="How's it growing?"
         />
       </View>
     );
