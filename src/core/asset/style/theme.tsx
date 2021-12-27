@@ -6,4 +6,5 @@ export const theme = {
   primary: '#7D55FF',
   primaryLight: '#8a68f9',
   white: '#ffffff',
+  shadowColor: '#533535',
 };

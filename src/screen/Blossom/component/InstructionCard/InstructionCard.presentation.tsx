@@ -2,6 +2,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Reanimated from 'react-native-reanimated';
+import { theme } from '@core/asset/style/theme';
 import { IInstructionCardPresentationProps } from './';
 
 export const InstructionCardPresentation: React.FC<IInstructionCardPresentationProps> =
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     backgroundColor: '#FFFFFF',
 
-    shadowColor: 'gray',
+    shadowColor: theme.shadowColor,
     shadowOffset: {
       width: 0,
       height: 5,

@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { IBlossomScreenPresentationProps } from '.';
-import { InstructionCard } from './component/InstructionCard';
+import { Ingredient } from './component/Ingredient';
+//import { InstructionCard } from './component/InstructionCard';
 
 export const BlossomScreenPresentation: React.FC<IBlossomScreenPresentationProps> =
   () => {
     return (
       <View style={styles.container}>
+        {/*
         <InstructionCard
           title="How to Grow"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -26,6 +28,14 @@ export const BlossomScreenPresentation: React.FC<IBlossomScreenPresentationProps
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla"
           rotateInRad={Math.PI / 4}
           delayAnimationInMS={300}
+        />
+
+        */}
+
+        <Ingredient
+          label="Water"
+          icon={require('@core/asset/icon/leaf.png')}
+          status="Completed"
         />
       </View>
     );
