@@ -16,7 +16,8 @@
     "gen-screen": "hygen screen new --name ",
     "push": "git push sub-origin main",
     "prepare": "husky install",
-    "release": "release-it"
+    "release": "release-it",
+    "ios13-dev": "npx react-native run-ios --simulator='iPhone 13'"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.5",
