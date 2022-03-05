@@ -1,15 +1,13 @@
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { ProgressBar } from './ProgressBar';
+import React from 'react';
 
-interface INormalAcountCardProps {
+interface IMainAccountCardProps {
   title: string;
   amount: string;
   icon: string;
-  percentage: number;
 }
 
-export const NormalAcountCard: React.FC<INormalAcountCardProps> = (props) => {
+export const MainAccountCard: React.FC<IMainAccountCardProps> = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.iconWrapper}>
@@ -18,8 +16,7 @@ export const NormalAcountCard: React.FC<INormalAcountCardProps> = (props) => {
         </Text>
       </View>
 
-      <View style={styles.contentWrapper}>
-        <ProgressBar value={props.percentage} />
+      <View>
         <Text style={styles.amount} allowFontScaling={false} numberOfLines={1}>
           {props.amount}
         </Text>
@@ -33,30 +30,28 @@ export const NormalAcountCard: React.FC<INormalAcountCardProps> = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#3A372E',
+    backgroundColor: '#9D9CA3',
     padding: 16,
     borderRadius: 16,
+    paddingRight: 40,
   },
 
   iconWrapper: {
-    marginBottom: 16,
+    marginBottom: 32,
   },
 
   icon: {
     fontSize: 24,
   },
 
-  contentWrapper: {},
-
   amount: {
     fontSize: 28,
     color: '#FFFFFF',
     fontWeight: '600',
-    marginTop: 8,
   },
 
   title: {
-    color: '#58585A',
+    color: '#EAE9EE',
     fontWeight: '700',
   },
 });

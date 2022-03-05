@@ -93,4 +93,5 @@ export type IMainStackNavigatorParams = {
   SlideOutLeftScreen: undefined;
   SlideOutRightScreen: undefined;
   SlideOutUpScreen: undefined;
+  BankAppScreen: undefined;
 };

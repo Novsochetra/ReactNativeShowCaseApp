@@ -22,9 +22,10 @@ const SHOW_CASE = {
   data: [
     getMenuItem('Apple News', 'AppleNewsScreen'),
     getMenuItem('Apple Stock', 'AppleStockScreen'),
-    getMenuItem('Bi Directional List', 'BiDirectionalListScreen'),
+    getMenuItem('Food Panda Tab', 'BiDirectionalListScreen'),
     getMenuItem('Parallax Scroll', 'ParallaxScrollScreen'),
     getMenuItem('Image Network', 'ImageNetWorkScreen'),
+    getMenuItem('Bank App Animation', 'BankAppScreen'),
   ],
 };
 

@@ -96,6 +96,7 @@ import { AppleStockScreen } from '@screen/AppleStock';
 import { BiDirectionalListScreen } from '@screen/BiDirectionalList';
 import { ParallaxScrollScreen } from '@screen/ParallaxScroll';
 import { ImageNetworkScreen } from '@screen/ImageNetwork';
+import { BankAppScreen } from '@screen/BankApp/BankAppScreen';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -125,6 +126,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="AppleStockScreen"
         component={AppleStockScreen}
         options={{ title: 'Apple Stock' }}
+      />
+
+      <Stack.Screen
+        name="BankAppScreen"
+        component={BankAppScreen}
+        options={{ title: 'Bank App' }}
       />
 
       <Stack.Screen
