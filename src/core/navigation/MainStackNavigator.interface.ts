@@ -4,6 +4,7 @@ export type IMainStackNavigatorParams = {
   BiDirectionalListScreen: undefined;
   ParallaxScrollScreen: undefined;
   ImageNetWorkScreen: undefined;
+  LoadingScreen: undefined;
   Home: undefined;
   BounceScreen: undefined;
   FlashScreen: undefined;

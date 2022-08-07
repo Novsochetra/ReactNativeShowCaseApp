@@ -26,6 +26,7 @@ const SHOW_CASE = {
     getMenuItem('Parallax Scroll', 'ParallaxScrollScreen'),
     getMenuItem('Image Network', 'ImageNetWorkScreen'),
     getMenuItem('Bank App Animation', 'BankAppScreen'),
+    getMenuItem('Loading', 'LoadingScreen'),
   ],
 };
 

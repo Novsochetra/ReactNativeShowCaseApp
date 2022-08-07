@@ -97,6 +97,7 @@ import { BiDirectionalListScreen } from '@screen/BiDirectionalList';
 import { ParallaxScrollScreen } from '@screen/ParallaxScroll';
 import { ImageNetworkScreen } from '@screen/ImageNetwork';
 import { BankAppScreen } from '@screen/BankApp/BankAppScreen';
+import { LoadingScreen } from '@screen/Loading/LoadingScreen';
 
 const Stack = createStackNavigator<IMainStackNavigatorParams>();
 
@@ -132,6 +133,12 @@ export const MainStackNavigator = (): React.ReactElement => {
         name="BankAppScreen"
         component={BankAppScreen}
         options={{ title: 'Bank App' }}
+      />
+
+      <Stack.Screen
+        name="LoadingScreen"
+        component={LoadingScreen}
+        options={{ title: 'Loading' }}
       />
 
       <Stack.Screen
