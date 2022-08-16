@@ -10,10 +10,10 @@ const Stack = createStackNavigator<IModalStackNavigatorParams>();
 const ModalStackNavigator = (): React.ReactElement => {
   return (
     <Stack.Navigator
-      mode="modal"
       initialRouteName="MainStack"
       screenOptions={{
         headerShown: false,
+        presentation: 'modal',
       }}>
       <Stack.Screen name="AuthStack" component={AuthStackNavigator} />
       <Stack.Screen name="MainStack" component={MainStackNavigator} />
